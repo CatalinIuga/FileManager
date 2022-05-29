@@ -18,6 +18,7 @@ import java.util.logging.Logger;
 import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
+import javax.swing.JLabel;
 
 public class WithTable extends javax.swing.JFrame {
 
@@ -72,7 +73,6 @@ public class WithTable extends javax.swing.JFrame {
         jButton8 = new javax.swing.JButton();
         jButton9 = new javax.swing.JButton();
         jFrame2 = new javax.swing.JFrame();
-        jLabel2 = new javax.swing.JLabel();
         jPanel5 = new javax.swing.JPanel();
         textfield = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
@@ -144,25 +144,6 @@ public class WithTable extends javax.swing.JFrame {
         );
 
         jFrame2.setTitle("Imaginea selectata");
-
-        jLabel2.setText("jLabel2");
-
-        javax.swing.GroupLayout jFrame2Layout = new javax.swing.GroupLayout(jFrame2.getContentPane());
-        jFrame2.getContentPane().setLayout(jFrame2Layout);
-        jFrame2Layout.setHorizontalGroup(
-            jFrame2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jFrame2Layout.createSequentialGroup()
-                .addGap(136, 136, 136)
-                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(340, Short.MAX_VALUE))
-        );
-        jFrame2Layout.setVerticalGroup(
-            jFrame2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jFrame2Layout.createSequentialGroup()
-                .addGap(110, 110, 110)
-                .addComponent(jLabel2)
-                .addContainerGap(241, Short.MAX_VALUE))
-        );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -453,10 +434,7 @@ public class WithTable extends javax.swing.JFrame {
                     } else if (image_check(aux)) {
                         BufferedImage buf = ImageIO.read(aux);
                         Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
-                        jLabel2.setSize(screenSize);
                         Image img = buf.getScaledInstance(screenSize.width - 25, screenSize.height - 100, Image.SCALE_SMOOTH);
-                        jLabel2.setIcon(new ImageIcon(img));
-                        jFrame2.setState(JFrame.MAXIMIZED_BOTH);
                         jFrame2.pack();
                         jFrame2.setVisible(true);
 
@@ -512,11 +490,9 @@ public class WithTable extends javax.swing.JFrame {
             } else try {
                 if (image_check(aux)) {
                     BufferedImage buf = ImageIO.read(aux);
-                    Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
-                    jLabel2.setSize(screenSize);
-                    Image img = buf.getScaledInstance(screenSize.width - 25, screenSize.height - 100, Image.SCALE_SMOOTH);
-                    jLabel2.setIcon(new ImageIcon(img));
-                    jFrame2.setState(JFrame.MAXIMIZED_BOTH);
+                    Image img = buf.getScaledInstance(720,480, Image.SCALE_SMOOTH);
+                    jFrame2.add(new JLabel(new ImageIcon(img)));
+                    jFrame2.repaint();
                     jFrame2.pack();
                     jFrame2.setVisible(true);
                 } else {
@@ -596,7 +572,7 @@ public class WithTable extends javax.swing.JFrame {
             change_directory();
         }
     }//GEN-LAST:event_jButton6ActionPerformed
-    
+
     // creare fisier nou
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         if (dir_c != null) {
@@ -674,7 +650,6 @@ public class WithTable extends javax.swing.JFrame {
     private javax.swing.JFrame jFrame1;
     private javax.swing.JFrame jFrame2;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JScrollPane jScrollPane1;
