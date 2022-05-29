@@ -21,6 +21,13 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 
 public class WithTable extends javax.swing.JFrame {
+//     Actiuni posibile:
+// -	Crearea de fisiere/directoare
+// -	Stergerea de fisier/directoare
+// -	Redenumirea de fisiere (sau directoare daca acestea nu contin fisiere)
+// -	Vizualizare si modificarea de continut pentru fisiere de tip text
+// -	Vizualizare de imagini
+
 
     static String dir_c; // director curent
     static String[] files; // fisierele din directorul curent
